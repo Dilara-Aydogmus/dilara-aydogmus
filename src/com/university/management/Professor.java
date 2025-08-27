@@ -17,5 +17,10 @@ public class Professor extends Person {
 		return department;
 	}
 
+	@Override
+	public String print(){
+	"Professor's name: " + getName() + " ,year of start: " 
+		+ getStartingYear() + " ,department: " + department();
+	}
 
 }

@@ -24,5 +24,5 @@ public abstract class Person implements Printable {
 	public int getStartingYear() {
 		return startingYear;
 	}
-
+	
 }
