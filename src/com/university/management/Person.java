@@ -1,6 +1,6 @@
 package com.university.management;
 
-public class Person { 
+public abstract class Person implements Printable { 
 	private String name;
 	private int startingYear;
 

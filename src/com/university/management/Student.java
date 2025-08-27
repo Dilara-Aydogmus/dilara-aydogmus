@@ -12,4 +12,12 @@ public class Student extends Person {
 	this.id = id;
 	this.department = department;
 	}
+
+	@Override
+	public String print() {
+	return "Student's id: " + id + " , name: " + getName() + " ,year of start: " 
+		+ getStartingYear() + " ,department: " + department();
+	}
+	
+	
 }
