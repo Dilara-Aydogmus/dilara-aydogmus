@@ -58,7 +58,7 @@ public class Main {
         students.add(new Student("Ogrenci9", 2022, 9, Department.CS));
         students.add(new Student("Ogrenci10", 2020, 10, Department.EE));
 
-        System.out.println("10 ogrenci uretildi. Toplam ogrenci sayisi: " + students.size());
+        System.out.println("Ogrenciler eklendi. Toplam ogrenci sayisi: " + students.size());
     }
 
 
@@ -67,7 +67,7 @@ public class Main {
         for (Student student : students) {
             departments.add(student.getDepartment());
         }
-        System.out.println("Benzersiz bolumler: " + departments);
+        System.out.println("Ogrencilerin ait oldugu bolumler: " + departments);
     }
 
     static void showDepartmentCounts() {
@@ -89,7 +89,7 @@ public class Main {
 
     static void listStudents() {
         if (students.isEmpty()) {
-            System.out.println("Ogrenci listesi bos. Once ogrenci uretiniz.");
+            System.out.println("Ogrenci listesi bos. Once ogrenci eklemelisiniz.");
             return;
         }
         for (Student student : students) {
