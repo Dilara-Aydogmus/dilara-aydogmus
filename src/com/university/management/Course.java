@@ -1,30 +1,30 @@
-package .com.university.management;
-java.util.ArrayList;
-java.util.List;
+package com.university.management;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Course implements Printable {
 	String title;
 	Professor professor;
-	List<String> students = new ArrayList<>();
+	List<Student> students = new ArrayList<>();
 
 	public Course(String title, Professor professor) {
 		this.title = title;
 		this.professor = professor;
 	}
 
-	public String setTitle(String title) {
+	public void setTitle(String title) {
 		this.title = title;
 	}
 	
-	public void getTitle() {
+	public String getTitle() {
 		return title;
 	}
 
-	public Professor setProfessor(Professor professor) {
+	public void setProfessor(Professor professor) {
 		this.professor = professor;
 	}
 	
-	public void getProfessor() {
+	public Professor getProfessor() {
 		return professor;
 	}
 
@@ -33,14 +33,14 @@ public class Course implements Printable {
 	}
 
 	public int studentCount() {
-		students.size();
+		return students.size();
 	}
 
 	@Override
 	public String print() {
 		return "Course title: " + title +
                " ,professor:" + professor.getName() +
-               ", amount of students" + students.size() 
+               ", amount of students" + students.size();
 	 }
 	
 }
