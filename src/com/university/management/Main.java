@@ -8,6 +8,7 @@ public class Main {
     static List<Professor> professors = new ArrayList<>();
 
     public static void main(String[] args) {
+
         while (true) {
             printMenu();
             String choice = sc.next().trim();
@@ -33,9 +34,23 @@ public class Main {
                     break;
                 case "0":
                     System.out.println("Programdan cikiliyor...");
-                    return;
-                default:
-                    System.out.println("Gecersiz secim!");
+                    printMenu();
+                    break;
+                case "7":
+                    System.out.print("Silinecek ogrenci adini girin: ");
+                    String name = sc.next();
+                    System.out.println("Emin misiniz? (Y/N)");
+                    String answer = sc.next();
+                    if(answer.equalsIgnoreCase("y")) {
+                        removeStudent(name);
+                    }
+                    else{
+                        System.out.print("\nVazgecildi, ana menuye donuluyor. ");
+                        printMenu();
+                    }
+                    break;
+                    default:
+                    System.out.println("\nGecersiz secim!");
             }
             System.out.println();
         }
@@ -49,12 +64,12 @@ public class Main {
         System.out.println("4) Ogrencileri listele");
         System.out.println("5) Profesorleri listele");
         System.out.println("6) 5 profesor uret");
+        System.out.println("7) Bir ogrenci sil");
         System.out.println("0) Cikis");
         System.out.print("Seciminiz: ");
     }
 
     static void generateStudents() {
-        students.clear();
         students.add(new Student("Ogrenci1", 2020, 1, Department.CS));
         students.add(new Student("Ogrenci2", 2021, 2, Department.EE));
         students.add(new Student("Ogrenci3", 2022, 3, Department.ME));
@@ -118,6 +133,20 @@ public class Main {
         }
         for (Professor profesor : professors) {
             System.out.println(profesor.print());
+        }
+    }
+
+    static void removeStudent(String name) {
+        if (students.isEmpty()) {
+            System.out.println("Ogrenci listesi bos.");
+            return;
+        }
+        for (int i = 0; i < 10; i++) {
+            if (students.get(i).getName().equals(name)) {
+                students.remove(i);
+                System.out.println("Ogrenci silindi");
+                return;
+            }
         }
     }
 }
